@@ -1,5 +1,44 @@
 # README
 
+# テーブル設計
+
+## users テーブル
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| name               | string | null: false |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false |
+### Association
+- has_many :events
+
+## events テーブル
+| Column             | Type       | Options     |
+| ------------------ | ---------- | ----------- |
+| user               | references | null: false, foreign_key: true|
+| title              | string     | null: false |
+| text               | string     |             |
+| location           | string     |             |
+| start              | string     |             |
+| end                | string     |             |
+| allday             | string     |             |
+| category           | references | null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- has_one :category
+
+## categories テーブル
+| Column             | Type       | Options     |
+| ------------------ | ---------- | ----------- |
+| event              | references | null: false, foreign_key: true|
+| work               | string     | null: false |
+| friend             | string     | null: false |
+| themepark          | string     | null: false |
+| hobby              | string     | null: false |
+| other              | string     | null: false |
+| period             | string     | null: false |
+### Association
+- belongs_to :event
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
