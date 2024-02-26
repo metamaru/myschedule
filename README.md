@@ -16,11 +16,11 @@
 | ------------------ | ---------- | ----------- |
 | user               | references | null: false, foreign_key: true|
 | title              | string     | null: false |
-| text               | string     |             |
+| comment            | text       |             |
 | location           | string     |             |
-| start              | string     |             |
-| end                | string     |             |
-| allday             | string     |             |
+| start_time         | datetime   |             |
+| end_time           | datetime   |             |
+| all_day            | boolean    |             |
 | category           | references | null: false, foreign_key: true|
 ### Association
 - belongs_to :user

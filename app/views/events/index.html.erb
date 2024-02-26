@@ -1,3 +1,6 @@
-<%= month_calendar do |date| %>
-  <%= date %>
+<h1>スケジュール</h1>
+
+
+<%= month_calendar events: @events do |date, events| %>
+  <%= date.day %>
 <% end %>
