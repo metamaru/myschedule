@@ -1,4 +1,4 @@
-<%= form_with(model: @event, url: new_event_path, local: true) do |form| %>
+<%= form_with(model: @event, url: events_path, local: true) do |form| %>
 
   <div class="title">
     <%= form.label :title %>
@@ -31,9 +31,10 @@
     <%= form.text_field :location %>
   </div>
 
+
     <div class="category">
-    <%= form.label :category_id, "カテゴリー" %>
-    <%= form.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-sales-status"}) %>
+    <%# form.label :category_id, "カテゴリー" %>
+    <%# form.collection_select(:category_id, [], :id, :name, { prompt: "カテゴリーを選択してください" }, {class:"select-box", id:"item-sales-status"}) %>
   </div>
 
   <div class="actions">
