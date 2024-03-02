@@ -1,6 +1,13 @@
-<h1>スケジュール</h1>
+<div class="toppage">
+<h1 calss="top">スケジュール</h1>
 
 
 <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
+
+  <% events.each do |event| %>
+    <div>
+      <%= link_to root_path %>
+    </div>
+  <% end %>
 <% end %>
