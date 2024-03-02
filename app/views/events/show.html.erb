@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center title">
+      <h1>予定詳細画面</h1>
+    </div>
+    <div class="col-12 mt-3 text-center content">
+    <div>
+        <label><strong>タイトル：</strong></label>
+        <p style="display:inline;"><%= @event.title %></p>
+      </div>
+      <div>
+        <label><strong>場所：</strong></label>
+        <p style="display:inline;"><%= @event.location %></p>
+      </div>
+      <div>
+        <label><strong>時間：</strong></label>
+        <p style="display:inline;"><%= @event.start_time %></p>
+      </div>
+    </div>
+        <label><strong>詳細：</strong></label>
+        <p style="display:inline;"><%= @event.comment %></p>
+      </div>
+    </div>
+    <div class="col-12 text-right">
+      <%= link_to '戻る', root_path %>
+    </div>
+  </div>
+</div>
