@@ -1,0 +1,44 @@
+<%= form_with(model: @event, url: events_path, local: true) do |form| %>
+
+  <div class="title">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="comment">
+    <%= form.label :comment %>
+    <%= form.text_field :comment %>
+  </div>
+
+  <div class="start_time">
+    <%= form.label :start_time %>
+    <%= form.datetime_select :start_time %>
+  </div>
+
+
+  <div class="end_time">
+    <%= form.label :end_time %>
+    <%= form.datetime_select :end_time %>
+  </div>
+
+  <div class="all_day">
+    <%= form.label :all_day, "終日" %>
+    <%= form.check_box :all_day %>
+  </div>
+
+  <div class="location">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+
+    <div class="category">
+    <%# form.label :category_id, "カテゴリー" %>
+    <%# form.collection_select(:category_id, [], :id, :name, { prompt: "カテゴリーを選択してください" }, {class:"select-box", id:"item-sales-status"}) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "追加" %>
+  </div>
+
+<% end %>

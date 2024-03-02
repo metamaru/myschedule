@@ -21,7 +21,7 @@
 | start_time         | datetime   |             |
 | end_time           | datetime   |             |
 | all_day            | boolean    |             |
-| category           | references | null: false, foreign_key: true|
+| category_id        | references | null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - has_one :category
