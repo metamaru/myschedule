@@ -26,6 +26,17 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def update
+    @event = Event.find(params[:id])
+    @event.update(event_params)
+    if @event.save
+      redirect_to root_path
+    else
+      puts @event.error.full_messages
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def event_params
