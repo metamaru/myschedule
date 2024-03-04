@@ -1,7 +1,8 @@
 class Event < ApplicationRecord
   belongs_to :user
 
-  validates :user_id, presence: true
-  validates :title, presence: true
-  validates :location, presence: true
+  with_options presence: true do
+    validates :user_id
+    validates :title
+  end
 end

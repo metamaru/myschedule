@@ -15,7 +15,6 @@
     <%= form.datetime_select :start_time %>
   </div>
 
-
   <div class="end_time">
     <%= form.label :end_time %>
     <%= form.datetime_select :end_time %>
@@ -40,5 +39,6 @@
   <div class="actions">
     <%= form.submit "追加" %>
   </div>
-
 <% end %>
+
+<%= render "shared/footer" %>
