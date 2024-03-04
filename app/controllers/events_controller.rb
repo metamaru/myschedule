@@ -37,8 +37,13 @@ class EventsController < ApplicationController
     end
   end
 
-  private
+  def destroy
+    event = Event.find(params[:id])
+    event.destroy
+    redirect_to root_path
+  end
 
+  private
   def event_params
     params.require(:event).permit(:title, :comment, :location, :start_time, :end_time, :all_day,).merge(user_id: current_user.id)
   end
