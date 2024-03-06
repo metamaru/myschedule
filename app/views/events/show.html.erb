@@ -11,6 +11,11 @@
     <div class="event-details">
       <div calss="event-date">
         <p style="display:inline;"><%= @event.start_time.strftime('%m/%d') %></p>
+        <% if @event.start_time.to_date != (@event.end_time || @event.start_time).to_date %>
+          <% if @event.end_time >= @event.start_time %>
+            - <%= @event.end_time.strftime('%m/%d') %>
+          <% end %>
+        <% end %>
       </div>
 
       <div>タイトル：<p style="display:inline;"><%= @event.title %></p>
