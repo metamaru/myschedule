@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update]
 
   def index
-    @events = Event.all
+    @events = Event.includes(:user).order(start_time: :asc).where(start_time: Date.today..(Date.today + 6.days))
     @event = Event.new
     @start_date = Date.today
   end
