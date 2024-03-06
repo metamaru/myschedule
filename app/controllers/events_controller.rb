@@ -4,6 +4,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     @event = Event.new
+    @start_date = Date.today
   end
 
   def new

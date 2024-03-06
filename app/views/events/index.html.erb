@@ -3,6 +3,7 @@
 <div class="toppage">
 <h1 calss="top">スケジュール</h1>
 
+<%= render "events_list"%>
 
 <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
