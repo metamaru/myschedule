@@ -18,13 +18,17 @@
         <td>
           <% if event.all_day? %>
             <%= event.start_time.strftime("%m/%d") %>
-            <% if event.start_time.to_date != (event.end_time || event.start_time).to_date %>
-              - <%= event.end_time.strftime("%m/%d") %>
+            <% if event.end_time && event.start_time.to_date != event.end_time.to_date %>
+              <% if event.end_time >= event.start_time %>
+                - <%= event.end_time.strftime("%m/%d") %>
+              <% end %>
             <% end %>
           <% else %>
             <%= event.start_time.strftime("%m/%d") %>
-            <% if event.start_time.to_date != (event.end_time || event.start_time).to_date %>
-              - <%= (event.end_time || event.start_time).strftime("%m/%d") %>
+            <% if event.end_time && event.start_time.to_date != event.end_time.to_date %>
+              <% if event.end_time >= event.start_time %>
+                - <%= event.end_time.strftime("%m/%d") %>
+              <% end %>
             <% end %>
           <% end %>
         </td>
@@ -35,4 +39,3 @@
     <% end %>
   </tbody>
 </table>
-
