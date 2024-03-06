@@ -12,17 +12,17 @@
 
   <div class="start_time">
     <%= form.label :start_time %>
-    <%= form.datetime_select :start_time %>
+    <%= form.datetime_select :start_time, id:"start_day" %>
   </div>
 
   <div class="end_time">
     <%= form.label :end_time %>
-    <%= form.datetime_select :end_time %>
+    <%= form.datetime_select :end_time, id:"end_day" %>
   </div>
 
   <div class="all_day">
     <%= form.label :all_day, "終日" %>
-    <%= form.check_box :all_day %>
+    <%= form.check_box :all_day, id:"all_day_checkbox" %>
   </div>
 
   <div class="location">
