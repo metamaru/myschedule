@@ -35,7 +35,7 @@
 | themepark          | string     | null: false |
 | hobby              | string     | null: false |
 | other              | string     | null: false |
-| period             | string     | null: false |
+| period             | date       | null: false |
 ### Association
 - belongs_to :event
 
