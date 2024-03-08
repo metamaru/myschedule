@@ -8,6 +8,7 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @categories = Category.all
   end
 
   def create

@@ -38,7 +38,7 @@
 
       <div class="category">
       <%# form.label :category_id, "カテゴリー" %>
-      <%# form.collection_select(:category_id, [], :id, :name, { prompt: "カテゴリーを選択してください" }, {class:"select-box", id:"item-sales-status"}) %>
+      <%# form.select :category_id, ["Work", "Friend", "Themepark", "Hobby", "Other", "period"] << @event.category_name, selected: @event.category_id %>
     </div>
 
     <div class="actions">

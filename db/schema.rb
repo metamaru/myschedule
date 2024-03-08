@@ -10,20 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_07_031752) do
-  create_table "categories", charset: "utf8", force: :cascade do |t|
-    t.bigint "event_id", null: false
-    t.string "work"
-    t.string "friend"
-    t.string "themepark"
-    t.string "hobby"
-    t.string "other"
-    t.date "period"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_categories_on_event_id"
-  end
-
+ActiveRecord::Schema[7.0].define(version: 2024_03_08_143601) do
   create_table "events", charset: "utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "comment"
@@ -50,6 +37,4 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_07_031752) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "categories", "events"
-  add_foreign_key "events", "users"
 end
