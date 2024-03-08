@@ -8,7 +8,6 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-    @categories = Category.all
   end
 
   def create
@@ -45,7 +44,7 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:title, :comment, :location, :start_time, :end_time, :all_day,).merge(user_id: current_user.id)
+    params.require(:event).permit(:title, :comment, :location, :start_time, :end_time, :all_day, :category_id).merge(user_id: current_user.id)
   end
 
   def set_event

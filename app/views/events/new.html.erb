@@ -1,38 +1,38 @@
 <%= form_with(model: @event, url: events_path, local: true) do |form| %>
 
-  <div class="title">
+  <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
-  <div class="comment">
+  <div class="field">
     <%= form.label :comment %>
     <%= form.text_field :comment %>
   </div>
 
-  <div class="start_time">
+  <div class="field">
     <%= form.label :start_time %>
     <%= form.datetime_select :start_time, id:"start_day" %>
   </div>
 
-  <div class="end_time">
+  <div class="field">
     <%= form.label :end_time %>
     <%= form.datetime_select :end_time, id:"end_day" %>
   </div>
 
-  <div class="all_day">
+  <div class="field">
     <%= form.label :all_day, "終日" %>
     <%= form.check_box :all_day, id:"all_day_checkbox" %>
   </div>
 
-  <div class="location">
+  <div class="field">
     <%= form.label :location %>
     <%= form.text_field :location %>
   </div>
 
-    <div class="category">
-    <%# form.label :category_id, "カテゴリー" %>
-    <%# form.select :category, ["Work", "Friend", "Themepark", "Hobby", "Other", "period"], :prompt => "選択してください" %>
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, Category.all, :id, :name, prompt: "選択してください" %>
   </div>
 
   <div class="actions">
