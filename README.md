@@ -37,7 +37,7 @@
 | other              | string     | null: false |
 | period             | date       | null: false |
 ### Association
-- belongs_to :event
+- has_one :event
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

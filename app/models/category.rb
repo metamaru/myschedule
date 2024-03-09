@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  belongs_to :event
+  has_one :event
 
   validates :name, presence: true, uniqueness: true
 end
