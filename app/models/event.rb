@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
   belongs_to :user
-  has_one :category
+  belongs_to :category
 
   with_options presence: true do
     validates :user_id

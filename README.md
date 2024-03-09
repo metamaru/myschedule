@@ -24,7 +24,7 @@
 | category_id        | references | null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_one :category
+- belongs_to :category
 
 ## categories テーブル
 | Column             | Type       | Options     |

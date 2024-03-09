@@ -21,6 +21,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @category = @event.category
   end
 
   def edit

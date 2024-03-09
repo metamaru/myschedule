@@ -18,13 +18,16 @@
         <% end %>
       </div>
 
-      <div>タイトル：<p style="display:inline;"><%= @event.title %></p>
+      <div calss="field">
+        タイトル：<p style="display:inline;"><%= @event.title %></p>
       </div>
 
-      <div>場所：<p style="display:inline;"><%= @event.location %></p>
+      <div calss="field">
+        場所：<p style="display:inline;"><%= @event.location %></p>
       </div>
 
-      <div>時間：
+      <div calss="field">
+        時間：
         <% if @event.all_day? %>
           <p style="display:inline;">終日</p>
         <% else %>
@@ -32,7 +35,12 @@
         <% end %>
       </div>
 
-      <div>詳細：<p style="display:inline;"><%= @event.comment %></p>
+      <div calss="field">
+        詳細：<p style="display:inline;"><%= @event.comment %></p>
+      </div>
+
+      <div calss="field">
+        カテゴリー：<%= @event.category.name %>
       </div>
     </div>
   </div>
