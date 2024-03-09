@@ -24,7 +24,7 @@
 | category_id        | references | null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_one :category
+- belongs_to :category
 
 ## categories テーブル
 | Column             | Type       | Options     |
@@ -35,9 +35,9 @@
 | themepark          | string     | null: false |
 | hobby              | string     | null: false |
 | other              | string     | null: false |
-| period             | string     | null: false |
+| period             | date       | null: false |
 ### Association
-- belongs_to :event
+- has_one :event
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
