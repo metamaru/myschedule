@@ -1,0 +1,22 @@
+/***ヘッダー***/
+header {
+  width: 100vw;
+  display: flex;
+  padding: 15px;
+}
+
+ul.nav_bar {
+  display: flex;
+  margin: 10px 15px;
+}
+
+a.user_nav {
+  color: black;
+  text-decoration: none;
+  font-size: 15px;
+  border: 1px solid;
+  border-color: rgb(245, 158, 107);
+  border-radius: 5px;
+  margin: 15px;
+  padding: 5px 10px;
+}
