@@ -9,32 +9,34 @@
     </div>
     <div class="list_contents">
     <% events_in_range.each do |event| %>
-      <div class="list_title">
-        <%= event.title %>
-      </div>
-      <div class="list_date">
-        <% if event.all_day? %>
-          <%= event.start_time.strftime("%m/%d") %>
-          <% if event.end_time && event.start_time.to_date != event.end_time.to_date %>
-            <% if event.end_time >= event.start_time %>
-              - <%= event.end_time.strftime("%m/%d") %>
+      <div class="list_set">
+        <div class="list_title">
+          <%= event.title %>
+        </div>
+        <div class="list_date">
+          <% if event.all_day? %>
+            <%= event.start_time.strftime("%m/%d") %>
+            <% if event.end_time && event.start_time.to_date != event.end_time.to_date %>
+              <% if event.end_time >= event.start_time %>
+                - <%= event.end_time.strftime("%m/%d") %>
+              <% end %>
+            <% end %>
+          <% else %>
+            <%= event.start_time.strftime("%m/%d %H:%M") %>
+            <% if event.end_time && event.start_time.to_date != event.end_time.to_date %>
+              <% if event.end_time >= event.start_time %>
+                - <%= event.end_time.strftime("%m/%d %H:%M") %>
+              <% end %>
             <% end %>
           <% end %>
-        <% else %>
-          <%= event.start_time.strftime("%m/%d") %>
-          <% if event.end_time && event.start_time.to_date != event.end_time.to_date %>
-            <% if event.end_time >= event.start_time %>
-              - <%= event.end_time.strftime("%m/%d") %>
-            <% end %>
-          <% end %>
-        <% end %>
+        </div>
+        <ul class="list_property">
+          <li>【 <%= link_to '詳細', event_path(event.id), class: "list_detail" %> 】</li>
+          <li>【 <%= link_to '編集', edit_event_path(event.id), class: "list_detail" %> 】</li>
+          <li>【 <%= link_to '削除', event_path(event.id), data: { turbo_method: :delete}, class: "list_detail" %> 】</li>
+        </ul>
       </div>
-      <ul class="list_property">
-        <li>【 <%= link_to '詳細', event_path(event.id), class: "list_detail" %> 】</li>
-        <li>【 <%= link_to '編集', edit_event_path(event.id), class: "list_detail" %> 】</li>
-        <li>【 <%= link_to '削除', event_path(event.id), data: { turbo_method: :delete}, class: "list_detail" %> 】</li>
-      </ul>
-    </div>
+    <% end %>
   </div>
-<% end %>
+</div>
 

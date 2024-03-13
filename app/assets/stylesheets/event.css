@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
 /***ヘッダー***/
 header {
   width: 100vw;
@@ -13,11 +18,8 @@ ul.nav_bar {
 }
 
 a.user_nav {
-  color: black;
-  text-decoration: none;
   font-size: 15px;
-  border: 1px solid;
-  border-color: rgb(245, 158, 107);
+  border: 1px solid rgb(245, 158, 107);
   border-radius: 5px;
   margin: 15px;
   padding: 5px 10px;
@@ -45,20 +47,57 @@ p {
 
 .list_contents {
   display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
   margin-left: 20px;
 }
 
-.list_date {
+.list_set {
   display: flex;
+  align-items: center;
+}
+
+.list_title,
+.list_date,
+.list_property {
   margin-right: 10px;
 }
 
-.list_property {
-  display: flex
+.list_title {
+  width: 100px;
 }
 
-a.list_detail {
-  text-decoration: none;
-  color: black;
+.list_property {
+  display: flex;
 }
+
+/***カレンダー部分***/
+.calendar-heading {
+  margin: 10px 20px;
+}
+
+nav {
+  margin-left: 10px;
+}
+
+th.sun{
+  color: red;
+}
+
+.wday-0 {
+  color: red;
+}
+
+.day {
+  margin-bottom: 5px;
+}
+
+.simple-calendar .prev-month,
+.simple-calendar .next-month {
+  background-color: rgba(202, 201, 201, 0.733);
+}
+
+.table-striped tbody td div {
+  margin-top: 5px;
+}
+
