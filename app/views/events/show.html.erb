@@ -1,17 +1,16 @@
 <%= render "shared/header" %>
 
 <div class="container">
-  <div class="row">
-    <div class="col-12 text-center title">
-      <h1>予定詳細画面</h1>
-    </div>
-  <%= link_to '編集', edit_event_path %>
-  <%= link_to '削除', event_path, data: { turbo_method: :delete} %>
+  <h1>予定詳細画面</h1>
 
+  <ul class="list-property">
+    <li><%= link_to '【編集】', edit_event_path %></li>
+    <li><%= link_to '【削除】', event_path, data: { turbo_method: :delete} %></li>
+  </ul>
   <% if @event.present? %>
-    <div class="event-details">
+    <div class="event-content">
       <div calss="event-date">
-        <p style="display:inline;"><%= @event.start_time.strftime('%m/%d') %></p>
+        <span>＊<%= @event.start_time.strftime('%m/%d') %>＊</span>
         <% if @event.start_time.to_date != (@event.end_time || @event.start_time).to_date %>
           <% if @event.end_time >= @event.start_time %>
             - <%= @event.end_time.strftime('%m/%d') %>
@@ -19,42 +18,44 @@
         <% end %>
       </div>
 
-      <div class="field">
-        タイトル：<p style="display:inline;"><%= @event.title %></p>
-      </div>
+      <div class="event-detail">
+        <div class="field">
+          タイトル：<%= @event.title %>
+        </div>
 
-    <% if @event.location.present? %>
-      <div class="field">
-        場所：<p style="display:inline;"><%= @event.location %></p>
-      </div>
-    <% end %>
+        <div class="field">
+          <% if @event.location.present? %>
+              場所：<%= @event.location %>
+          <% end %>
+        </div>
 
-      <div class="field">
-        時間：
-        <% if @event.all_day? %>
-          <p style="display:inline;">終日</p>
-        <% else %>
-          <p style="display:inline;"><%= @event.start_time.strftime('%H:%M') %> 〜 <%= @event.end_time.strftime('%H:%M') %></p>
-        <% end %>
-      </div>
+        <div class="field">
+          時間：
+          <% if @event.all_day? %>
+            終日
+          <% else %>
+            <%= @event.start_time.strftime('%H:%M') %> 〜 <%= @event.end_time.strftime('%H:%M') %>
+          <% end %>
+        </div>
 
-    <% if @event.comment.present? %>
-      <div class="field">
-        詳細：<p style="display:inline;"><%= @event.comment %></p>
-      </div>
-    <% end %>
+        <div class="field">
+          <% if @event.comment.present? %>
+            詳細：<%= @event.comment %>
+          <% end %>
+        </div>
 
-      <div class="field">
-        カテゴリー：<%= @event.category.name %>
+        <div class="field">
+          カテゴリー：<%= @event.category.name %>
+        </div>
+
+        <div class="field">
+          <% if @event.category.name == 'period' %>
+            次の予定日：<%= (@event.start_time.to_date + 28.days).strftime('%m/%d') %>
+          <% end %>
+        </div>
       </div>
-      <% if @event.category.name == 'period' %>
-      <div calss="field">
-        次の予定日：<%= (@event.start_time.to_date + 28.days).strftime('%m/%d') %>
-      </div>
-      <% end %>
     </div>
   <% end %>
-  </div>
 </div>
 
 <%= render "shared/footer" %>

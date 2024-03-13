@@ -12,12 +12,12 @@ header {
 
 }
 
-ul.nav_bar {
+ul.nav-bar {
   display: flex;
   margin: 10px 15px;
 }
 
-a.user_nav {
+a.user-nav {
   font-size: 15px;
   border: 1px solid rgb(245, 158, 107);
   border-radius: 5px;
@@ -35,40 +35,41 @@ p {
   margin: 10px 20px;
 }
 
-/***events_list***/
-.list_index {
+/***一覧表示画面***/
+.list-index {
   display: flex;
   margin: 0 10px 10px 20px;
 }
 
-.list_title {
+.list-title {
   margin-right: 20px;
 }
 
-.list_contents {
+.list-contents {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
   margin-left: 20px;
 }
 
-.list_set {
+.list-set {
   display: flex;
   align-items: center;
 }
 
-.list_title,
-.list_date,
-.list_property {
+.list-title,
+.list-date,
+.list-property {
   margin-right: 10px;
 }
 
-.list_title {
+.list-title {
   width: 100px;
 }
 
-.list_property {
+.list-property {
   display: flex;
+  margin-left: 20px;
 }
 
 /***カレンダー部分***/
@@ -101,3 +102,26 @@ th.sun{
   margin-top: 5px;
 }
 
+/***詳細画面***/
+.container {
+  width: 100vw;
+}
+
+h1 {
+  font-size: 25px;
+  font-weight: 600;
+  margin: 10px 20px;
+}
+
+.event-content {
+  margin: 10px 0;
+}
+
+span {
+  margin-left: 30px;
+  font-size: 20px;
+}
+
+.field {
+  margin: 5px 20px;
+}

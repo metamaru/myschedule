@@ -2,18 +2,18 @@
 <% end_date = start_date + 6.days %>
 
 <% events_in_range = @events.select { |event| (event.start_time.to_date..(event.end_time || event.start_time).to_date).overlaps?(start_date..end_date) } %>
-  <div class="list_top">
-    <div class="list_index">
-      <div class="list_title">タイトル</div>
-      <div class="list_title">日時</div>
+  <div class="list-top">
+    <div class="list-index">
+      <div class="list-title">タイトル</div>
+      <div class="list-title">日時</div>
     </div>
-    <div class="list_contents">
+    <div class="list-contents">
     <% events_in_range.each do |event| %>
-      <div class="list_set">
-        <div class="list_title">
+      <div class="list-set">
+        <div class="list-title">
           <%= event.title %>
         </div>
-        <div class="list_date">
+        <div class="list-date">
           <% if event.all_day? %>
             <%= event.start_time.strftime("%m/%d") %>
             <% if event.end_time && event.start_time.to_date != event.end_time.to_date %>
@@ -30,10 +30,10 @@
             <% end %>
           <% end %>
         </div>
-        <ul class="list_property">
-          <li>【 <%= link_to '詳細', event_path(event.id), class: "list_detail" %> 】</li>
-          <li>【 <%= link_to '編集', edit_event_path(event.id), class: "list_detail" %> 】</li>
-          <li>【 <%= link_to '削除', event_path(event.id), data: { turbo_method: :delete}, class: "list_detail" %> 】</li>
+        <ul class="list-property">
+          <li>【 <%= link_to '詳細', event_path(event.id), class: "list-detail" %> 】</li>
+          <li>【 <%= link_to '編集', edit_event_path(event.id), class: "list-detail" %> 】</li>
+          <li>【 <%= link_to '削除', event_path(event.id), data: { turbo_method: :delete}, class: "list-detail" %> 】</li>
         </ul>
       </div>
     <% end %>
