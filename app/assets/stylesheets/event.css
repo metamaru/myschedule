@@ -3,6 +3,8 @@ header {
   width: 100vw;
   display: flex;
   padding: 15px;
+  background-color: rgb(207, 250, 236);
+
 }
 
 ul.nav_bar {
@@ -19,4 +21,44 @@ a.user_nav {
   border-radius: 5px;
   margin: 15px;
   padding: 5px 10px;
+}
+/***トップページ***/
+.toppage {
+  width: 100vw;
+}
+
+p {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 10px 20px;
+}
+
+/***events_list***/
+.list_index {
+  display: flex;
+  margin: 0 10px 10px 20px;
+}
+
+.list_title {
+  margin-right: 20px;
+}
+
+.list_contents {
+  display: flex;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.list_date {
+  display: flex;
+  margin-right: 10px;
+}
+
+.list_property {
+  display: flex
+}
+
+a.list_detail {
+  text-decoration: none;
+  color: black;
 }
