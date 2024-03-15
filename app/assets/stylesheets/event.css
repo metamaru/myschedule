@@ -3,6 +3,14 @@ a {
   color: black;
 }
 
+.toppage{
+  width: 100vw;
+}
+
+.main {
+  text-align: center;
+}
+
 /***ヘッダー***/
 header {
   width: 100vw;
@@ -24,11 +32,25 @@ a.user-nav {
   margin: 15px;
   padding: 5px 10px;
 }
-/***トップページ***/
-.toppage {
+
+/***フッター***/
+footer {
   width: 100vw;
 }
 
+.footer-bar {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-btn {
+  font-size: 13px;
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 0 5px;
+}
+
+/***トップページ***/
 p {
   font-size: 30px;
   font-weight: 700;
@@ -54,13 +76,12 @@ p {
 
 .list-set {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .list-title,
-.list-date,
-.list-property {
-  margin-right: 10px;
+.list-date {
+  margin-right: 5px;
 }
 
 .list-title {
@@ -69,7 +90,9 @@ p {
 
 .list-property {
   display: flex;
-  margin-left: 20px;
+  text-align: right;
+  margin-top: 10px;
+  padding-left: 20px;
 }
 
 /***カレンダー部分***/
@@ -103,18 +126,25 @@ th.sun{
 }
 
 /***詳細画面***/
-.container {
-  width: 100vw;
-}
-
 h1 {
   font-size: 25px;
   font-weight: 600;
   margin: 10px 20px;
 }
 
+.list-property {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
 .event-content {
+  justify-content: center;
   margin: 10px 0;
+}
+
+.event-detail {
+  padding: 5px 0;
 }
 
 span {
@@ -122,6 +152,15 @@ span {
   font-size: 20px;
 }
 
-.field {
+.show-field {
   margin: 5px 20px;
+}
+
+/***新規投稿画面***/
+.new-event {
+}
+
+.field,
+.action {
+  margin: 10px 20px;
 }

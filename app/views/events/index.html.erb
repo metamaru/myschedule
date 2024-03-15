@@ -1,8 +1,10 @@
 <%= render "shared/header" %>
 <div class="toppage">
-  <div class="index-top">
-    <p>スケジュール</p>
-      <%= render "events_list"%>
+  <div class="main">
+    <div class="index-top">
+      <p>スケジュール</p>
+        <%= render "events_list"%>
+    </div>
   </div>
   <div class="index-main">
     <%= month_calendar events: @events do |date, events| %>
