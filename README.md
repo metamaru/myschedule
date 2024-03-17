@@ -5,7 +5,7 @@ myschedule
 自分に必要な項目を一つのスケジュールでまとめて管理できることができる
 
 # URL
-
+https://myschedule-40260.onrender.com
 
 # テスト用アカウント
 - Basic認証パスワード :1231
@@ -35,44 +35,6 @@ myschedule
 
 # 画面遷移図
 [![Image from Gyazo](https://i.gyazo.com/c528cf7434c7c42030211e664d04f52b.png)](https://gyazo.com/c528cf7434c7c42030211e664d04f52b)
-
-# テーブル設計
-## users テーブル
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| name               | string | null: false |
-| email              | string | null: false, unique: true |
-| encrypted_password | string | null: false |
-### Association
-- has_many :events
-
-## events テーブル
-| Column             | Type       | Options     |
-| ------------------ | ---------- | ----------- |
-| user               | references | null: false, foreign_key: true|
-| title              | string     | null: false |
-| comment            | text       |             |
-| location           | string     |             |
-| start_time         | datetime   |             |
-| end_time           | datetime   |             |
-| all_day            | boolean    |             |
-| category_id        | references | null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :category
-
-## categories テーブル
-| Column             | Type       | Options     |
-| ------------------ | ---------- | ----------- |
-| event              | references | null: false, foreign_key: true|
-| work               | string     | null: false |
-| friend             | string     | null: false |
-| themepark          | string     | null: false |
-| hobby              | string     | null: false |
-| other              | string     | null: false |
-| period             | date       | null: false |
-### Association
-- has_one :event
 
 # 開発環境
 - Ruby 3.2.0
