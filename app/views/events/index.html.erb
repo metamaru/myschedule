@@ -1,15 +1,20 @@
 <%= render "shared/header" %>
 <div class="toppage">
-<h1 calss="top">スケジュール</h1>
-
-<%= render "events_list"%>
-
-<%= month_calendar events: @events do |date, events| %>
-  <%= date.day %>
-
-  <% events.each do |event| %>
-    <div>
-      <%= link_to event.title, event_path(event.id) %>
+  <div class="main">
+    <div class="index-top">
+      <p>スケジュール</p>
+        <%= render "events_list"%>
     </div>
-  <% end %>
-<% end %>
+  </div>
+  <div class="index-main">
+    <%= month_calendar events: @events do |date, events| %>
+      <%= date.day %>
+
+      <% events.each do |event| %>
+        <div>
+          <%= link_to event.title, event_path(event.id) %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

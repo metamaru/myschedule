@@ -1,43 +1,50 @@
-<%= form_with(model: @event, url: events_path, local: true) do |form| %>
+<div class="toppage">
+  <div class="main">
+    <h1>新規投稿画面</h1>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <div class="new-event">
+      <%= form_with(model: @event, url: events_path, local: true) do |form| %>
+
+      <div class="field">
+        <%= form.label :タイトル %>
+        <%= form.text_field :title %>
+      </div>
+
+      <div class="field">
+        <%= form.label :詳細 %>
+        <%= form.text_field :comment %>
+      </div>
+
+      <div class="field">
+        <%= form.label :開始時刻 %>
+        <%= form.datetime_select :start_time, minute_step: 15, id:"start_day" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :終了時刻 %>
+        <%= form.datetime_select :end_time, minute_step: 15, id:"end_day" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :all_day, "終日" %>
+        <%= form.check_box :all_day, id:"all_day_checkbox" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :場所 %>
+        <%= form.text_field :location %>
+      </div>
+
+      <div class="field">
+        <%= form.label :カテゴリー %>
+        <%= form.collection_select :category_id, Category.all, :id, :name, prompt: "選択してください" %>
+      </div>
+
+      <div class="action">
+        <%= form.submit "追加" %>
+      </div>
+    <% end %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_field :comment %>
-  </div>
-
-  <div class="field">
-    <%= form.label :start_time %>
-    <%= form.datetime_select :start_time, id:"start_day" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :end_time %>
-    <%= form.datetime_select :end_time, id:"end_day" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :all_day, "終日" %>
-    <%= form.check_box :all_day, id:"all_day_checkbox" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
-
-  <div class="field">
-    <%= form.label :category_id %>
-    <%= form.collection_select :category_id, Category.all, :id, :name, prompt: "選択してください" %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "追加" %>
-  </div>
-<% end %>
-
+</div>
 <%= render "shared/footer" %>

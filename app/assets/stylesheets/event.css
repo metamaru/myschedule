@@ -1,0 +1,170 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.toppage{
+  width: 100vw;
+}
+
+.main {
+  text-align: center;
+}
+
+/***ユーザー管理***/
+h2 {
+  font-size: 25px;
+  font-weight: 600;
+  margin: 10px 20px;
+}
+
+/***ヘッダー***/
+header {
+  width: 100vw;
+  display: flex;
+  padding: 15px;
+
+}
+
+ul.nav-bar {
+  display: flex;
+  margin: 10px 15px;
+}
+
+a.user-nav {
+  font-size: 15px;
+  border: 1px solid rgb(245, 158, 107);
+  border-radius: 5px;
+  margin: 15px;
+  padding: 5px 10px;
+}
+
+/***フッター***/
+footer {
+  width: 100vw;
+}
+
+.footer-bar {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-btn {
+  font-size: 13px;
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 0 5px;
+}
+
+/***トップページ***/
+p {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 10px 20px;
+}
+
+/***一覧表示画面***/
+.list-top {
+  text-align: center;
+}
+.list-index {
+  display: flex;
+  margin: 0 10px 10px 20px;
+}
+
+.list-title {
+  margin-right: 20px;
+}
+
+.list-contents {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.list-set {
+  display: flex;
+  justify-content: left;
+}
+
+.list-title,
+.list-date {
+  margin-right: 5px;
+}
+
+.list-property {
+  display: flex;
+  text-align: right;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+/***カレンダー部分***/
+.calendar-heading {
+  margin: 10px 20px;
+}
+
+nav {
+  margin-left: 10px;
+}
+
+th.sun{
+  color: red;
+}
+
+.wday-0 {
+  color: red;
+}
+
+.day {
+  margin-bottom: 5px;
+}
+
+.simple-calendar .prev-month,
+.simple-calendar .next-month {
+  background-color: rgba(202, 201, 201, 0.733);
+}
+
+.table-striped tbody td div {
+  margin-top: 5px;
+}
+
+/***詳細画面***/
+h1 {
+  font-size: 25px;
+  font-weight: 600;
+  margin: 10px 20px;
+}
+
+.list-property {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.event-content {
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.event-detail {
+  padding: 5px 0;
+}
+
+span {
+  margin-left: 30px;
+  font-size: 20px;
+}
+
+.show-field {
+  margin: 5px 20px;
+}
+
+/***新規投稿画面***/
+.new-event {
+}
+
+.field,
+.action {
+  margin: 10px 20px;
+}
