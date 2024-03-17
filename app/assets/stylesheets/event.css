@@ -11,12 +11,18 @@ a {
   text-align: center;
 }
 
+/***ユーザー管理***/
+h2 {
+  font-size: 25px;
+  font-weight: 600;
+  margin: 10px 20px;
+}
+
 /***ヘッダー***/
 header {
   width: 100vw;
   display: flex;
   padding: 15px;
-  background-color: rgb(207, 250, 236);
 
 }
 
@@ -58,6 +64,9 @@ p {
 }
 
 /***一覧表示画面***/
+.list-top {
+  text-align: center;
+}
 .list-index {
   display: flex;
   margin: 0 10px 10px 20px;
@@ -70,22 +79,17 @@ p {
 .list-contents {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
-  margin-left: 20px;
+  margin: 10px;
 }
 
 .list-set {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
 }
 
 .list-title,
 .list-date {
   margin-right: 5px;
-}
-
-.list-title {
-  width: 100px;
 }
 
 .list-property {

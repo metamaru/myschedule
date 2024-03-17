@@ -6,23 +6,23 @@
     <%= form_with(model: @event, local: true) do |form| %>
 
     <div class="field">
-      <%= form.label :title %>
+      <%= form.label :タイトル %>
       <%= form.text_field :title %>
     </div>
 
     <div class="field">
-      <%= form.label :comment %>
+      <%= form.label :詳細 %>
       <%= form.text_field :comment %>
     </div>
 
     <div class="field">
-      <%= form.label :start_time %>
-      <%= form.datetime_select :start_time %>
+      <%= form.label :開始時刻 %>
+      <%= form.datetime_select :start_time, minute_step: 10 %>
     </div>
 
     <div class="field">
-      <%= form.label :end_time %>
-      <%= form.datetime_select :end_time %>
+      <%= form.label :終了時刻 %>
+      <%= form.datetime_select :end_time, minute_step: 10 %>
     </div>
 
     <div class="field">
@@ -31,13 +31,13 @@
     </div>
 
     <div class="field">
-      <%= form.label :location %>
+      <%= form.label :場所 %>
       <%= form.text_field :location %>
     </div>
 
 
     <div class="field">
-      <%= form.label :category_id %>
+      <%= form.label :カテゴリー %>
       <%= form.collection_select :category_id, Category.all, :id, :name, prompt: "選択してください" %>
     </div>
 
