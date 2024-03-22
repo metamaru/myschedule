@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   const allDayCheckbox = document.getElementById("all_day_checkbox");
-  const startDateInput = document.getElementById("#event_start_time_1i, #event_start_time_2i, #event_start_time_3i, #event_start_time_4i, #event_start_time_5i");
-  const endDateInput = document.getElementById("#event_end_time_1i, #event_end_time_2i, #event_end_time_3i, #event_end_time_4i, #event_end_time_5i");
+  const startDateSelects = document.querySelectorAll("#event_start_time_1i, #event_start_time_2i, #event_start_time_3i, #event_start_time_4i, #event_start_time_5i");
+  const endDateSelects = document.querySelectorAll("#event_end_time_1i, #event_end_time_2i, #event_end_time_3i, #event_end_time_4i, #event_end_time_5i");
 
   allDayCheckbox.addEventListener("change", function() {
     if (allDayCheckbox.checked) {
