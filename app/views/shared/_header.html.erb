@@ -2,7 +2,7 @@
     <% if user_signed_in? %>
       <ul class="nav-bar">
         <li><%= link_to "＋", new_event_path, class: "user-nav" %></li>
-        <li><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "user-nav" %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "user-nav", id: "logout-link" %></li>
       </ul>
     <% else %>
       <ul class="nav-bar">
