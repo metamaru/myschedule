@@ -17,17 +17,17 @@
 
     <div class="field">
       <%= form.label :開始時刻 %>
-      <%= form.datetime_select :start_time, minute_step: 10 %>
+      <%= form.datetime_select :start_time, minute_step: 15, id:"start_time" %>
     </div>
 
     <div class="field">
       <%= form.label :終了時刻 %>
-      <%= form.datetime_select :end_time, minute_step: 10 %>
+      <%= form.datetime_select :end_time, minute_step: 15, id:"end_time" %>
     </div>
 
     <div class="field">
       <%= form.label :all_day, "終日" %>
-      <%= form.check_box :all_day %>
+      <%= form.check_box :all_day, id:"all_day_checkbox" %>
     </div>
 
     <div class="field">
